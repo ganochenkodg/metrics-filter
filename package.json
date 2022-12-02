@@ -1,0 +1,27 @@
+{
+  "name": "metrics-filter",
+  "version": "0.1.0",
+  "description": "Simple tool to fetch and filter prometheus metrics.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "build": "docker build -t metrics-filter:latest ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ganochenkodg/metrics-filter.git"
+  },
+  "keywords": ["metrics", "prometheus", "fastify"],
+  "author": "Dmitrii Ganochenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ganochenkodg/metrics-filter/issues"
+  },
+  "homepage": "https://github.com/ganochenkodg/metrics-filter#readme",
+  "dependencies": {
+    "fastify": "^4.10.2",
+    "fastify-graceful-shutdown": "^3.4.0",
+    "got": "^12.5.3"
+  }
+}
