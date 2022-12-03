@@ -2,7 +2,6 @@ FROM node:18-alpine3.16
 
 ENV PORT=9200
 
-RUN apk add curl
 RUN mkdir /app && chown -R node:node /app
 WORKDIR /app
 COPY --chown=node:node package*.json ./

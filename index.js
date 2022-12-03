@@ -12,7 +12,7 @@ app.get('/metrics', async (req, res) => {
   console.log(remoteEndpoint);
   try {
     const response = await got(remoteEndpoint);
-    res.send(applyFilters(response.body));
+    res.send(applyRegex(response.body));
   } catch (error) {
     console.log(error.response.body);
     res.code(500).send(error.response.body);

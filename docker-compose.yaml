@@ -4,16 +4,18 @@ services:
   node-exporter:
     image: bitnami/node-exporter:latest
     ports:
-      - "9100:9100"
+      - 9100:9100
     restart: on-failure
 
   metrics-filter:
     build: .
     environment:
-      WHITE_LIST: "process_"
-      BLACK_LIST: "_errors"
-      REMOTE_METRICS_ENDPOINT: "node-exporter:9100/metrics"
+      WHITE_LIST: "promhttp_,process_"
+      BLACK_LIST: "_errors,_memory"
+      REMOTE_METRICS_ENDPOINT: "http://node-exporter:9100/metrics"
     ports:
-      - "9200:9200"
-    depends_on:
+      - 9200:9200
+    depends_on: 
       - node-exporter
+    restart: on-failure
+
