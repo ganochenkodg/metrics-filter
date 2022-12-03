@@ -27,6 +27,6 @@ These are the environment variables understood by the container image.
 | HOST                    | Address to bind the service, `0.0.0.0` by default                       |
 | PORT                    | Port to bind the service, `9092` by default                             |
 | REMOTE_METRICS_ENDPOINT | Source of metrics in the format protocol://address:port/metricsendpoint |
-| WHITE_LIST              | List of keywords to keep metrics, can be `, ; |` separated              |
-| BLACK_LIST              | List of keywords to filter out metrics, can be `, ; |` separated        |
+| WHITE_LIST              | List of keywords to keep metrics, can be `, ; \|` separated             |
+| BLACK_LIST              | List of keywords to filter out metrics, can be `, ; \|` separated       |
 
