@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "build": "docker build -t metrics-filter:latest ."
+    "build": "docker-compose build",
+    "docker-run": "docker-compose up -d"
   },
   "repository": {
     "type": "git",
