@@ -1,6 +1,6 @@
 {
   "name": "metrics-filter",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simple tool to fetch and filter prometheus metrics.",
   "main": "index.js",
   "type": "module",

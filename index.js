@@ -1,7 +1,7 @@
 import fastify from 'fastify';
 import got from 'got';
-import { port, host, remoteEndpoint, whiteList, blackList } from './config.js';
-import { toRegex, applyRegex, whiteListR, blackListR } from './filter.js';
+import { port, host, remoteEndpoint, allowList, blockList } from './config.js';
+import { toRegex, applyRegex, allowListR, blockListR } from './filter.js';
 import gracefulShutdown from 'fastify-graceful-shutdown';
 
 export const app = fastify({ logger: true });
@@ -31,7 +31,7 @@ if (remoteEndpoint == '') {
 }
 
 //generate filter regex
-toRegex(whiteList, blackList);
+toRegex(allowList, blockList);
 
 //start listening
 app.listen(port, host, (err) => {

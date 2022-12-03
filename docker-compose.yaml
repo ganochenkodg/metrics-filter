@@ -10,8 +10,8 @@ services:
   metrics-filter:
     build: .
     environment:
-      WHITE_LIST: "promhttp_,process_"
-      BLACK_LIST: "_errors,_memory"
+      ALLOW_LIST: "promhttp_,process_"
+      BLOCK_LIST: "_errors,_memory"
       REMOTE_METRICS_ENDPOINT: "http://node-exporter:9100/metrics"
     ports:
       - 9200:9200

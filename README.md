@@ -1,14 +1,14 @@
 # metrics-filter
 
 ### description
-Metrics-filter is a service that allows you to request metrics in Prometheus format and filter them according to the white and black lists.
+Metrics-filter is a service that allows you to request metrics in Prometheus format and filter them according to the allow and block lists.
 
 The service's workflow is:
 ```mermaid
 graph TD
     A[Remote metrics, ENV REMOTE_METRICS_ENDPOINT] -->B
-    B[White list rules, ENV WHITE_LIST] --> C
-    C[Black list rules, ENV BLACK_LIST] --> D
+    B[Allow list rules, ENV ALLOW_LIST] --> C
+    C[Block list rules, ENV BLOCK_LIST] --> D
     D[Provide metrics on the $HOST:$PORT/metrics endpoint]
 ```
 
@@ -27,6 +27,6 @@ These are the environment variables understood by the container image.
 | HOST                    | Address to bind the service, `0.0.0.0` by default                       |
 | PORT                    | Port to bind the service, `9092` by default                             |
 | REMOTE_METRICS_ENDPOINT | Source of metrics in the format protocol://address:port/metricsendpoint |
-| WHITE_LIST              | List of keywords to keep metrics, can be `, ; \|` separated             |
-| BLACK_LIST              | List of keywords to filter out metrics, can be `, ; \|` separated       |
+| ALLOW_LIST              | List of keywords to keep metrics, can be `, ; \|` separated             |
+| BLOCK_LIST              | List of keywords to filter out metrics, can be `, ; \|` separated       |
 
